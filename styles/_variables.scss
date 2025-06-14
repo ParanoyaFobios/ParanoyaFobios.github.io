@@ -1,0 +1,21 @@
+:root {
+  --color-black: #191a23;
+  --color-white: #ffffff;
+  --color-accent: #077450;
+  --color-accent-alt: #71baa2;
+  --color-accent-trans40: #07745066;
+
+  --background-gradient: linear-gradient(45deg, #fef98b 3.68%, #e4b01a 98.66%);
+
+  --font-family-base: "Montserrat Alternates", sans-serif;
+
+  --container-width: 1216px;
+  --container-padding-x: 30px;
+  --button-height: 53px;
+
+  --transition-duration: 0.8s;
+  --transition-duration-fast: 0.3s;
+
+  --scale: scale(1.15);
+
+}

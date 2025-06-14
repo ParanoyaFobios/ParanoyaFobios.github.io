@@ -1,0 +1,130 @@
+.header {
+  --container-padding-x: 20px;
+
+  background-color: var(--color-accent);
+  box-shadow: 0px 2px 3px 0px #04473066;
+  position: sticky;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  &.hide-on-scroll {
+    transform: translateY(-100%);
+    transition: transform var(--transition-duration) ease;
+  }
+
+  &.show-on-scroll-up {
+    transform: translateY(0);
+    position: sticky;
+  }
+
+  &__body {
+    width: 95%;
+    color: var(--color-white);
+    height: clamp(104px, 75px + 7.97vw, 155px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet-above {
+      max-width: 830px;
+      height: 173px;
+    }
+  }
+
+  &__logo {
+    order: 1;
+
+    &-wrapper {
+      @include flex-center;
+      width: clamp(87px, 48px + 10.83vw, 100px);
+
+      @include phone-above {
+        width: 129px;
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+
+    &-list {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+
+      &:last-of-type {
+        order: 2;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-shrink: 1;
+
+      &--left {
+        order: -1;
+      }
+    }
+
+    &-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      text-align: center;
+      height: 48px;
+      width: max-content;
+      padding: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition-duration: inherit;
+      }
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__burger-button {
+    @include square(42px);
+
+    &-icon-wrapper {
+      @include flex-center;
+      width: 100%;
+      height: 100%;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    @include phone-above {
+      @include square(56px);
+    }
+  }
+}

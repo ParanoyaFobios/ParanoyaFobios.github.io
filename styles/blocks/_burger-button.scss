@@ -1,0 +1,13 @@
+.burger-button {
+  @include reset-button;
+  transition-duration: var(--transition-duration-fast);
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+
+  @include hover {
+      transform: var(--scale);
+  }
+}

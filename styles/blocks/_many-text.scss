@@ -1,0 +1,9 @@
+.many-text {
+  padding-block: 20px;
+  line-height: 2;
+  font-size: clamp(18px, 8px + 2.08vw, 24px);
+
+  &--long-p-bottom {
+    padding-bottom: 60px;
+  }
+}

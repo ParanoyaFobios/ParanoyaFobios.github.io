@@ -1,0 +1,57 @@
+.hero {
+  height: clamp(354px, 177px + 49.17vw, 413px);
+  @include flex-center;
+  background-color: var(--color-accent-alt);
+  @include backgroundImgSet("../images/hero/hero");
+
+  @include phone-above {
+    height: clamp(495px, 91px + 52.59vw, 617px);
+  }
+
+  @include tablet-above {
+    height: 1085px;
+  }
+
+  &__body {
+    height: 64%;
+    @include flex-center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include phone-above {
+      height: 69%;
+    }
+
+    @include tablet-above {
+      height: 483px;
+    }
+  }
+
+  &__title {
+    color: var(--color-white);
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: clamp(52px, 1px + 14.17vw, 69px);
+    @include phone-above {
+      font-size: clamp(72px, 32px + 8.29vw, 115px);
+    }
+
+    @include tablet-above {
+      font-size: clamp(130px, 15px + 11.46vw, 170px);
+    }
+
+    &--smaller-font {
+      font-size: clamp(35px, -1px + 10vw, 47px);
+
+      @include phone-above {
+        font-size: clamp(49px, 22px + 5.59vw, 78px);
+      }
+
+      @include tablet-above {
+        font-size: clamp(89px, 12px + 7.74vw, 116px);
+      }
+    }
+  }
+}

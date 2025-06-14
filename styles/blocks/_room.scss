@@ -1,0 +1,19 @@
+.room {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: clamp(35px, 11px + 6.72vw, 78px);
+
+    @include tablet-above {
+      font-size: 96px;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: clamp(30px, 11px + 5.31vw, 64px);
+  }
+}

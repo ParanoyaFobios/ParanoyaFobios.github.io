@@ -1,0 +1,86 @@
+.contacts {
+  background-color: var(--color-accent);
+  padding-block: 60px;
+  color: var(--color-white);
+  @include flex-center;
+  flex-direction: column;
+  row-gap: 50px;
+
+  &__title {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: clamp(30px, 11px + 5.31vw, 64px);
+    text-align: center;
+  }
+
+  &__address {
+    @include flex-center;
+    flex-direction: column;
+    row-gap: clamp(50px, 35px + 4.17vw, 55px);
+
+    @include phone-above {
+      row-gap: clamp(60px, -9940px + 1000vw, 70px);
+    }
+  }
+
+  &__phone-and-email {
+    @include flex-center;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 40px;
+  }
+
+  &__link {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    @include flex-center;
+    column-gap: clamp(14px, 2px + 3.33vw, 18px);
+    letter-spacing: 0.07em;
+
+    &--phone {
+      font-size: clamp(22px, 10px + 3.43vw, 36px);
+    }
+
+    &--email {
+      font-size: clamp(13px, 3px + 2.7vw, 24px);
+    }
+
+    &-icon-wrapper {
+      @include flex-center;
+      @include square(clamp(23px, -28px + 14.17vw, 40px));
+
+      &--in-phone-and-email {
+        position: relative;
+        top: 1px;
+      }
+
+      svg {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  &__physical-address {
+    font-size: clamp(13px, 7px + 1.72vw, 20px);
+    text-align: center;
+  }
+
+  &__messengers {
+    @include flex-center;
+    column-gap: 50px;
+
+    &-link-icon-wrapper {
+      @include flex-center;
+      width: clamp(23px, -28px + 14.17vw, 40px);
+      height: auto;
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

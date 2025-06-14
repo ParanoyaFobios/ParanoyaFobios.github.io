@@ -1,0 +1,16 @@
+body {
+    font-family: var(--font-family-base );
+    font-weight: 500;//преобладающая по макету жирность шрифта
+    line-height: 1.28;//в гугл хроме обычно такой коэффициент, ставим его, чтобы во всех браузерах выглядело примерно одинаково
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+a, button, textarea, svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

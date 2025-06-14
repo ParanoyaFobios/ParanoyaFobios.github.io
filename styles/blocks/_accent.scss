@@ -1,0 +1,64 @@
+.accent {
+  
+  &-bg {
+      background-color: var(--color-accent);
+  }
+
+  &-header {
+    margin-block: 20px;
+    background-color: var(--color-accent);
+    display: inline-block;
+    padding-block: clamp(6px, -9px + 4.17vw, 11px);
+    padding-right: clamp(15px, 4.17vw, 20px);
+    padding-left: 40px;
+    width: 49%;
+    min-width: max-content;
+    @include flex-center;
+    justify-content: flex-end;
+  
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+  
+    @include phone-above {
+      padding-right: 30px;
+      padding-block: 16px;
+    }
+  }
+
+  &-footer {
+    align-self: flex-end;
+    margin-block: 20px;
+    background-color: var(--color-accent);
+    display: inline-block;
+    padding-block: clamp(6px, -9px + 4.17vw, 11px);
+    padding-left: clamp(15px, 4.17vw, 20px);
+    padding-right: 10px;
+    width: 40%;
+    @include flex-center;
+    justify-content: flex-start;
+  
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+  
+    @include phone-above {
+      padding-right: 30px;
+      padding-block: 16px;
+    }
+  
+    @media (min-width: 1300px) {
+        width: 43%;
+    }
+  
+    &__external-elem {
+      color: var(--color-accent);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+

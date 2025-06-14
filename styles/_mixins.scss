@@ -1,0 +1,83 @@
+
+//1920px - максимальная ширина по макету
+
+@mixin reset-link {
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin reset-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin square($size) {
+  width: $size;
+  aspect-ratio: 1;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@mixin backgroundImgSet($urlWithoutFormat) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: image-set(
+    url("#{$urlWithoutFormat}480-2x.avif") type("image/avif") 2x,
+    url("#{$urlWithoutFormat}480-1x.avif") type("image/avif") 1x,
+    url("#{$urlWithoutFormat}480-2x.jpg") 2x,
+    url("#{$urlWithoutFormat}480-1x.jpg") 1x
+  );
+
+  @include phone-above {
+    background-image: image-set(
+    url("#{$urlWithoutFormat}1000-2x.avif") type("image/avif") 2x,
+    url("#{$urlWithoutFormat}1000-1x.avif") type("image/avif") 1x,
+    url("#{$urlWithoutFormat}1000-2x.jpg") 2x,
+    url("#{$urlWithoutFormat}1000-1x.jpg") 1x
+  );
+  }
+
+  @include tablet-above {
+    background-image: image-set(
+    url("#{$urlWithoutFormat}1920-2x.avif") type("image/avif") 2x,
+    url("#{$urlWithoutFormat}1920-1x.avif") type("image/avif") 1x,
+    url("#{$urlWithoutFormat}1920-2x.jpg") 2x,
+    url("#{$urlWithoutFormat}1920-1x.jpg") 1x
+  );
+  }
+}

@@ -1,0 +1,73 @@
+.swiper {
+  width: 100%;
+  max-width: 1920px;
+
+  &-container {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+
+    &::part(button-prev) {
+      left: 25%;
+    }
+
+    &::part(button-next) {
+      right: 25%;
+      left: auto;
+    }
+
+    &::part(pagination) {
+      color: var(--color-white);
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      bottom: 13%;
+      transform: translateY(50%);
+      gap: 12px;
+      @include flex-center;
+      pointer-events: none;
+
+      @include phone-above {
+        font-size: clamp(32px, -7968px + 800vw, 40px);
+      }
+    }
+
+    &::part(button-prev),
+    &::part(button-next) {
+      display: none;
+      background-color: var(--color-accent-trans40);
+      color: var(--color-white);
+      height: 40px;
+      width: 40px;
+      border-radius: 40px;
+      padding: 20px;
+      transition-duration: var(--transition-duration-fast);
+
+      position: absolute;
+      bottom: 13%;
+      transform: translateY(50%);
+      z-index: 20;
+      top: auto;
+
+      @include hover {
+        background-color: var(--color-accent);
+      }
+
+      @include tablet-above {
+        display: flex;
+      }
+    }
+  }
+
+  &-slide {
+    @include flex-center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+}
